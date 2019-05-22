@@ -12,6 +12,8 @@ DESIGN - All design documents such as specs, project time table, etc should be i
 PROJECTS - Directory for all unity projects, including main project and test projects. The latest release must be marked as [LATEST STABLE]
 MISC - Everything else that does not appeal to a specific category 
 
+Add explanation on what is in the folders in the directory txt file for each folder.
+
 **PLEASE PUSH ALL DEVELOPMENT TO PERSONAL DEV BRANCHES. DO NOT PUSH TO MASTER**
 All changes must be presented in the following order
 Local -> Personal Branch -> Dev Branch -> Master
