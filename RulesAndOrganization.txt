@@ -1,0 +1,17 @@
+"OH NO! Where should xxx go???" - a guide v1.0
+
+All files, except those that already exists, should be in one of the four folders. The files are
+-OrganizationHelp
+-LICENSE
+-README
+-.gitignore
+
+The division of folders is outlined as follows
+BUILDS - All builds, devBuilds or release builds should be in this folder and outlined as such
+DESIGN - All design documents such as specs, project time table, etc should be in this folder (bascially all the PM stuff)
+PROJECTS - Directory for all unity projects, including main project and test projects. The latest release must be marked as [LATEST STABLE]
+MISC - Everything else that does not appeal to a specific category 
+
+**PLEASE PUSH ALL DEVELOPMENT TO PERSONAL DEV BRANCHES. DO NOT PUSH TO MASTER**
+All changes must be presented in the following order
+Local -> Personal Branch -> Dev Branch -> Master
