@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CubeBehavior.cs" />
+    <Compile Include="Assets\Scripts\KeyBinding.cs" />
+    <Compile Include="Assets\Scripts\PlayerBehavior.cs" />
+    <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/CS_EOY_Proj2019/Projects/UnityTutorialProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
