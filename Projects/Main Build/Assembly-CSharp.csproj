@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Internals\KeyBinding.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilityScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\TimerScript.cs" />
     <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/CodeStuff/CS_EOY_Proj2019/Projects/Main Build/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
