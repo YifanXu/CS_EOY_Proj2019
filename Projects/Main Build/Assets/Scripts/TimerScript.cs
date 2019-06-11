@@ -52,5 +52,9 @@ public class TimerScript : MonoBehaviour
     public static void ChangeTime(float delta)
     {
         staticObject.time += delta;
+        if(staticObject.time > staticObject.MaxTime)
+        {
+            staticObject.time = staticObject.MaxTime;
+        }
     }
 }
