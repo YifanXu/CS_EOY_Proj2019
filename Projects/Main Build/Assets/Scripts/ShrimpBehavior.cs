@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public float speed;
         public float rotateAngle;
         public float shootAngle;
+        public GameObject shrimpPrefab;
 
         // Start is called before the first frame update
         void Start()
