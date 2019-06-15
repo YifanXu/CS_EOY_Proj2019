@@ -11,6 +11,7 @@ namespace Assets.Scripts
         public float jumpForce = 10f;
         public float size = 0.7f;
         public bool canDI = true;
+        private float momentum = 0f;
         public LayerMask groundLayer;
 
         private KeyCode moveL;
@@ -18,11 +19,11 @@ namespace Assets.Scripts
         private KeyCode jumpButton;
         private Transform transf;
         private Rigidbody2D rigid;
+        private SpriteRenderer spriteRen;
 
         private bool isGrounded = false;
         public bool hitWallRight = false;
         public bool hitWallLeft = false;
-        private float momentum = 0f;
         private float momentumDelta = 0f;
 
         // Start is called before the first frame update
@@ -33,6 +34,7 @@ namespace Assets.Scripts
             jumpButton = KeyBinding.GetKey(Control.Jump);
             transf = this.GetComponent<Transform>();
             rigid = this.GetComponent<Rigidbody2D>();
+            spriteRen = this.GetComponent<SpriteRenderer>();
         }
 
         // Update is called once per frame
@@ -70,12 +72,15 @@ namespace Assets.Scripts
                 momentum += momentumDelta;
                 momentumDelta = 0f;
             }
-            if(!(momentum < 0 && hitWallLeft) && !(momentum > 0 && hitWallRight))
-            transf.position += new Vector3(momentum * Time.deltaTime,0);
+            if (!(momentum < 0 && hitWallLeft) && !(momentum > 0 && hitWallRight))
+            {
+                transf.position += new Vector3(momentum * Time.deltaTime, 0);
+                spriteRen.flipY = momentum < 0f;
+            }
 
             if (isGrounded && Input.GetKeyDown(jumpButton))
             {
-                rigid.AddForce(new Vector2(0, jumpForce * 100));
+                rigid.velocity = new Vector2(0, jumpForce);
             }
         }
     }
