@@ -5,7 +5,9 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     public GameObject focus;
+    public GameObject background;
     public float LerpFactor = 0.7f;
+    public float backgroundFactor = 0.05f;
 
     private float zConstant;
     private Transform transf;
@@ -20,9 +22,17 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
-        pos = Vector3.Lerp(pos, focus.GetComponent<Transform>().position, LerpFactor);
-        pos.z = zConstant;
-        transf.position = pos;
+        //Lerp
+        Vector3 newPos = transf.position;
+        newPos = Vector3.Lerp(newPos, focus.GetComponent<Transform>().position, LerpFactor);
+
+        //Set Background
+        Vector3 delta = transf.position - newPos;
+        delta.z = 0;
+        background.transform.position += delta * backgroundFactor;
+
+        //Set Camera
+        newPos.z = zConstant;
+        transf.position = newPos;
     }
 }

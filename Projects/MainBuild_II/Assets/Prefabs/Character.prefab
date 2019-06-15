@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8677735578465204944}
   m_Layer: 9
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,11 +49,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spd: 10
   jumpForce: 10
-  size: 0.7
+  verticalSize: 0.7
+  horizontalSize: 1
   canDI: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  isGrounded: 0
   hitWallRight: 0
   hitWallLeft: 0
 --- !u!114 &2836903643485032744
