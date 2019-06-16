@@ -24,7 +24,7 @@ namespace Assets.Scripts
         public bool isGrounded = false;
         public bool hitWallRight = false;
         public bool hitWallLeft = false;
-        private float momentum = 0f;
+        public float momentum = 0f;
         private float momentumDelta = 0f;
 
         // Start is called before the first frame update

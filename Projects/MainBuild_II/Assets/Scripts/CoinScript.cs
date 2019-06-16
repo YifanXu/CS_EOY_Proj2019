@@ -26,7 +26,7 @@ public class CoinScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag.Contains("Player"))
+        if(collision.CompareTag("Player"))
         {
             TimerScript.ChangeTime((float)value);
             Destroy(this.gameObject);
