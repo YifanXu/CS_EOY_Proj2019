@@ -6,13 +6,14 @@ namespace Assets.Scripts
 {
     public class TomatoScipt : MonoBehaviour
     {
-        public float force;
-        public float angle;
         public GameObject player;
-        public float btwDistance;
+        public Sprite explosion;
         private float distance;
-        Vector2 forceVector;
+        public float btwDistance = 7.0f;
+        public Vector2 forceVector = new Vector2(100.0f, 300.0f);
         private bool active = false;
+        private float timer = 0.0f;
+        public float explode = 0.2f;
 
         // Start is called before the first frame update
         void Start()
@@ -30,17 +31,13 @@ namespace Assets.Scripts
                 {
                     Debug.Log("Activated!!");
                     active = true;
-                    if ((player.transform.position - this.transform.position).x > 0)
-                    {
-                        forceVector.x = force * Mathf.Cos(angle);
-                    }
-                    else
-                    {
-                        forceVector.x = force * Mathf.Cos(angle) * -1;
-                    }
-                    forceVector.y = force * Mathf.Sin(angle);
                     this.GetComponent<Rigidbody2D>().AddForce(forceVector);
                 }
+            }
+
+            if (this.GetComponent<SpriteRenderer>().sprite == explosion)
+            {
+                Explode();
             }
         }
 
@@ -48,7 +45,16 @@ namespace Assets.Scripts
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                // Explosion Animation
+                this.GetComponent<SpriteRenderer>().sprite = explosion;
+            }
+        }
+
+        private void Explode()
+        {
+            timer += Time.deltaTime;
+            if (timer >= explode)
+            {
+                timer = 0.0f;
                 Destroy(this.gameObject);
                 // Kill player somehow
             }

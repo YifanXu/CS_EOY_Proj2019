@@ -6,16 +6,15 @@ public class ShrimpInstantiate : MonoBehaviour
 {
     public GameObject shrimp;
     public GameObject cannon;
-    private int shrimpCount;
+    private int shrimpCount = 0;
     private Transform cannonTransform;
-    float timer = 0.0f;
-    public float btwShots;
-    public float btwRounds;
+    private float timer = 0.0f;
+    public float btwShots = 0.1f;
+    public float btwRounds = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        shrimpCount = 0;
         cannonTransform = this.GetComponent<Transform>();
     }
 
