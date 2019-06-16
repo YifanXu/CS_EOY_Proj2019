@@ -10,6 +10,7 @@ namespace Assets.Scripts
         public Ability.specificType[] type;
         private KeyCode[] abilitiesCode;
         private Ability[] abilities;
+        private bool iconsCallibrated = false;
 
         // Start is called before the first frame update
         void Start()
@@ -31,7 +32,8 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            for(int i = 0; i < abilitiesCode.Length; i++)
+            if(!iconsCallibrated && UIScript.staticObject != null) UIScript.CallibrateIcons(type);
+            for (int i = 0; i < abilitiesCode.Length; i++)
             {
                 if(Input.GetKeyDown(abilitiesCode[i]))
                 {

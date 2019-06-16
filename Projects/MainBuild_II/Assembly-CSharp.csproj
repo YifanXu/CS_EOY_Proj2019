@@ -72,7 +72,7 @@
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\ShrimpBehavior.cs" />
     <Compile Include="Assets\Scripts\ShrimpInstantiate.cs" />
-    <Compile Include="Assets\Scripts\TimerScript.cs" />
+    <Compile Include="Assets\Scripts\UIScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/CodeStuff/CS_EOY_Proj2019/Projects/MainBuild_II/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
