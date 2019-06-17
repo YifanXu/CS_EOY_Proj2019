@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c651fa3ecb42e6489546ace155a65eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 0
+  isActive: 1
 --- !u!212 &252392184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -687,6 +687,7 @@ MonoBehaviour:
     m_Bits: 1024
   isPressed: 0
   delay: 1
+  timer: 0
 --- !u!1001 &1124884628
 PrefabInstance:
   m_ObjectHideFlags: 0
