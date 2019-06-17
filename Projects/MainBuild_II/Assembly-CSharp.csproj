@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CoinScript.cs" />
     <Compile Include="Assets\Scripts\Internals\Control.cs" />
     <Compile Include="Assets\Scripts\Internals\KeyBinding.cs" />
+    <Compile Include="Assets\Scripts\OctopusScript.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilityScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\ShrimpBehavior.cs" />
