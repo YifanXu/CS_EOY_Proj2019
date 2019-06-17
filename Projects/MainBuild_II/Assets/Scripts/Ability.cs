@@ -11,11 +11,13 @@ namespace Assets.Scripts
         {
             None,
             Dash,
+            Freeze,
         }
 
         private static Dictionary<specificType, Type> ablities = new Dictionary<specificType, Type>()
         {
-            {specificType.Dash, typeof(DashAbility) }
+            {specificType.Dash, typeof(DashAbility) },
+            {specificType.Freeze, typeof(FreezeAbility) }
         };
 
         // Start is called before the first frame update
