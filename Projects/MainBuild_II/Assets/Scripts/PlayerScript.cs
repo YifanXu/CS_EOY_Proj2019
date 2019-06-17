@@ -83,7 +83,7 @@ namespace Assets.Scripts
                 if(momentum != 0f) spriteRen.flipX = momentum < 0f;
             }
 
-            if (isGrounded && Input.GetKeyDown(jumpButton))
+            if (isGrounded && Input.GetKeyDown(jumpButton) && !isFrozen)
             {
                 rigid.velocity = new Vector2(0, jumpForce);
             }
