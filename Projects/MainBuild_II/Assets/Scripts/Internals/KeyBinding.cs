@@ -15,9 +15,13 @@ namespace Assets.Scripts.Internals
             {
                 keySet = new Dictionary<Control, KeyCode>()
                 {
-                    { Control.MoveLeft, KeyCode.A },
-                    { Control.MoveRight, KeyCode.D },
-                    { Control.Jump, KeyCode.K }
+                    { Control.MoveLeft, KeyCode.LeftArrow },
+                    { Control.MoveRight, KeyCode.RightArrow },
+                    {Control.Jump, KeyCode.UpArrow },
+                    {Control.Ability1, KeyCode. Alpha1},
+                    {Control.Ability2, KeyCode. Alpha2},
+                    {Control.Ability3, KeyCode. Alpha3},
+                    {Control.Ability4, KeyCode. Alpha4},
                 };
             }
 

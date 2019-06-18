@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public float verticalSize = 0.7f;
         public float horizontalSize = 1f;
         public bool canDI = true;
+        public bool isFrozen = false;
         public LayerMask groundLayer;
 
         private KeyCode moveL;
@@ -76,13 +77,13 @@ namespace Assets.Scripts
                 momentum += momentumDelta;
                 momentumDelta = 0f;
             }
-            if (!(momentum < 0 && hitWallLeft) && !(momentum > 0 && hitWallRight))
+            if (!isFrozen && !(momentum < 0 && hitWallLeft) && !(momentum > 0 && hitWallRight))
             {
                 transf.position += new Vector3(momentum * Time.deltaTime, 0);
                 if(momentum != 0f) spriteRen.flipX = momentum < 0f;
             }
 
-            if (isGrounded && Input.GetKeyDown(jumpButton))
+            if (isGrounded && Input.GetKeyDown(jumpButton) && !isFrozen)
             {
                 rigid.velocity = new Vector2(0, jumpForce);
             }
