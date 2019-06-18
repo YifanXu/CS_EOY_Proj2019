@@ -9,6 +9,7 @@ namespace Assets.Scripts
         public float strength = 10f;
         private TrailRenderer trail;
         private PlayerScript movement;
+        private SpriteRenderer spriteRen;
 
         public float timer;
         private float trailLinger = 0.2f;
@@ -18,9 +19,10 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
-            trail = gameObject.GetComponent<TrailRenderer>();
+            trail = GetComponent<TrailRenderer>();
             trail.enabled = false;
-            movement = gameObject.GetComponent<PlayerScript>();
+            movement = GetComponent<PlayerScript>();
+            spriteRen = GetComponent<SpriteRenderer>();
         }
 
         // Update is called once per frame
@@ -49,7 +51,7 @@ namespace Assets.Scripts
                 trail.enabled = true;
                 trail.time = trailLinger;
                 timer = trailLinger;
-                tempMomentumDelta = strength * (movement.momentum >= 0f ? 1 : -1);
+                tempMomentumDelta = strength * (spriteRen.flipX ? -1 : 1);
                 movement.momentum += tempMomentumDelta;
             }
         }
