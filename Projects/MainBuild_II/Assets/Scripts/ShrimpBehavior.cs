@@ -10,7 +10,7 @@ namespace Assets.Scripts
     class ShrimpBehavior : MonoBehaviour
     {
         public float speed;
-        public float rotateAngle;
+        public float rotateAngle = 20.0f;
         public float shootAngle;
         public GameObject shrimpPrefab;
 
