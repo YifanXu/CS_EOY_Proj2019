@@ -63,15 +63,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ability.cs" />
+    <Compile Include="Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CoinScript.cs" />
+    <Compile Include="Assets\Scripts\DashAbility.cs" />
+    <Compile Include="Assets\Scripts\DoorScript.cs" />
+    <Compile Include="Assets\Scripts\FreezeAbility.cs" />
     <Compile Include="Assets\Scripts\Internals\Control.cs" />
     <Compile Include="Assets\Scripts\Internals\KeyBinding.cs" />
+    <Compile Include="Assets\Scripts\Output.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilityScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\Scripts\ShrimpBehavior.cs" />
     <Compile Include="Assets\Scripts\ShrimpInstantiate.cs" />
-    <Compile Include="Assets\Scripts\TimerScript.cs" />
+    <Compile Include="Assets\Scripts\UIScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/CodeStuff/CS_EOY_Proj2019/Projects/MainBuild_II/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
