@@ -51,7 +51,7 @@ namespace Assets.Scripts
             else if(time < 0f) time = 0f;
 
             string roundedTime = (Mathf.Round(time * 100f) / 100f).ToString();
-            int decimalPoint = roundedTime.IndexOf('.');
+            int decimalPoint = System.Math.Max(roundedTime.IndexOf('.'), roundedTime.IndexOf(','));
             if (decimalPoint == -1) roundedTime += ".00";
             else if (decimalPoint == roundedTime.Length - 2) roundedTime += "0";
             timeTextComp.text = $"{ roundedTime } / {MaxTime}";
