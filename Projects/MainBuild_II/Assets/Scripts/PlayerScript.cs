@@ -37,6 +37,10 @@ namespace Assets.Scripts
             transf = this.GetComponent<Transform>();
             rigid = this.GetComponent<Rigidbody2D>();
             spriteRen = GetComponent<SpriteRenderer>();
+
+            //Set def momentum
+            if (Input.GetKey(moveL)) momentumDelta -= spd;
+            if (Input.GetKey(moveR)) momentumDelta += spd;
         }
 
         // Update is called once per frame
