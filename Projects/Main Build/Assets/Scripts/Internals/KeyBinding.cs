@@ -17,7 +17,7 @@ namespace Assets.Scripts.Internals
                 {
                     { Control.MoveLeft, KeyCode.LeftArrow },
                     { Control.MoveRight, KeyCode.RightArrow },
-                    {Control.Jump, KeyCode.UpArrow }
+                    {Control.Jump, KeyCode.Space }
                 };
             }
             if(keySet.TryGetValue(c, out var k))
