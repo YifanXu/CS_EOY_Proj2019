@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  explosion: {fileID: 0}
+  explosion: {fileID: 449946604109099370, guid: 1ed0d2f4408167e4aa1cd2145e24820a,
+    type: 3}
   btwDistance: 7
   forceVector: {x: 100, y: 300}
   explode: 0.2

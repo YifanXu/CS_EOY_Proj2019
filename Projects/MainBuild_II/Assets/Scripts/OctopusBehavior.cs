@@ -1,19 +1,14 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
-    class ShrimpBehavior : MonoBehaviour
+    public class OctopusBehavior : MonoBehaviour
     {
-        public GameObject shrimpPrefab;
+        private Vector3 position;
 
         public float speed;
-        public float rotateAngle = 20.0f;
-        public float shootAngle;
 
         private float timeLoss = -5.0f;
 
@@ -25,13 +20,8 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            Vector3 rotation = this.GetComponent<Transform>().eulerAngles;
-            rotation.z += rotateAngle;
-            this.GetComponent<Transform>().eulerAngles = rotation;
-
-            Vector3 position = this.GetComponent<Transform>().position;
-            position.x += speed * Mathf.Cos(shootAngle);
-            position.y += speed * Mathf.Sin(shootAngle);
+            position = this.GetComponent<Transform>().position;
+            position.x += speed;
             this.GetComponent<Transform>().position = position;
         }
 
