@@ -20,7 +20,7 @@ namespace Assets.Scripts
         public GameObject[] abilityObjs;
         public Sprite[] abilitySprites;
 
-        private Transform handTransf;
+        private RectTransform handTransf;
         private Text timeTextComp;
 
         public bool isFrozen = false;
@@ -32,7 +32,7 @@ namespace Assets.Scripts
             staticObject = this;
 
             if (TimeTicks.Length != 4) throw new System.Exception("There must be 4 timeticks!");
-            handTransf = ClockHand.GetComponent<Transform>();
+            handTransf = ClockHand.GetComponent<RectTransform>();
             timeTextComp = TimeText.GetComponent<Text>();
 
             time = MaxTime;
@@ -55,7 +55,7 @@ namespace Assets.Scripts
             if (decimalPoint == -1) roundedTime += ".00";
             else if (decimalPoint == roundedTime.Length - 2) roundedTime += "0";
             timeTextComp.text = $"{ roundedTime } / {MaxTime}";
-            handTransf.eulerAngles = new Vector3(0, 0, 360 - time / MaxTime * 360f);
+            handTransf.eulerAngles = new Vector3(0, 0, 360f - time / MaxTime * 360f);
         }
 
         public static void ChangeTime(float delta)
