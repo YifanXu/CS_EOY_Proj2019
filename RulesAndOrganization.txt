@@ -10,6 +10,7 @@ The division of folders is outlined as follows
 BUILDS - All builds, devBuilds or release builds should be in this folder and outlined as such
 DESIGN - All design documents such as specs, project time table, etc should be in this folder (bascially all the PM stuff)
 PROJECTS - Directory for all unity projects, including main project and test projects. The latest release must be marked as [LATEST STABLE]
+ASSETS - Self Explanatory
 MISC - Everything else that does not appeal to a specific category 
 
 Add explanation on what is in the folders in the directory txt file for each folder.

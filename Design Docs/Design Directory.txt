@@ -1,0 +1,2 @@
+Charter - Design Doc that parker wants
+Specs - Code documentation. Class structures etc
