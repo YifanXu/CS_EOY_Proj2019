@@ -4,16 +4,19 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public class TomatoScipt : MonoBehaviour
+    public class TomatoBehavior : MonoBehaviour
     {
         public GameObject player;
         public Sprite explosion;
+
         private float distance;
         public float btwDistance = 7.0f;
         public Vector2 forceVector = new Vector2(100.0f, 300.0f);
         private bool active = false;
         private float timer = 0.0f;
         public float explode = 0.2f;
+
+        private float timeLoss = -5.0f;
 
         // Start is called before the first frame update
         void Start()
@@ -56,7 +59,7 @@ namespace Assets.Scripts
             {
                 timer = 0.0f;
                 Destroy(this.gameObject);
-                // Kill player somehow
+                UIScript.ChangeTime(timeLoss);
             }
         }
     }
