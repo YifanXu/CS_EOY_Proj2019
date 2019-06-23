@@ -19,6 +19,7 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
+            CDTime = 2f;
             trail = GetComponent<TrailRenderer>();
             trail.enabled = false;
             movement = GetComponent<PlayerScript>();

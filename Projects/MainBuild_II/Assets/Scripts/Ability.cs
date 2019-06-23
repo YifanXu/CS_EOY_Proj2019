@@ -14,6 +14,10 @@ namespace Assets.Scripts
             Freeze,
         }
 
+        public float timer { get; set; }
+        public float CDTime { get; set; }
+        public KeyCode button { get; set; }
+
         private static Dictionary<specificType, Type> ablities = new Dictionary<specificType, Type>()
         {
             {specificType.Dash, typeof(DashAbility) },
@@ -23,7 +27,7 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
-
+            CDTime = -1f;
         }
 
         // Update is called once per frame
