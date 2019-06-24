@@ -19,6 +19,7 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
+            totalCD = 5f;
             movement = this.GetComponent<PlayerScript>();
             rigid = this.GetComponent<Rigidbody2D>();
             spriteRen = GetComponent<SpriteRenderer>();

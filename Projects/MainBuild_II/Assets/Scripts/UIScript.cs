@@ -13,11 +13,13 @@ namespace Assets.Scripts
         private static Dictionary<Ability.specificType, Sprite> spriteDictionary;
 
         public float MaxTime;
+        public float CDSquareHeight = 53f;
         public GameObject ClockHand;
         public GameObject TimeText;
         public GameObject[] TimeTicks;
 
         public GameObject[] abilityObjs;
+        public GameObject[] CDSquares;
         public Sprite[] abilitySprites;
 
         private RectTransform handTransf;
@@ -25,11 +27,12 @@ namespace Assets.Scripts
 
         public bool isFrozen = false;
         private float time;
-
+        private PlayerAbilityScript playerAbility;
         // Start is called before the first frame update
         void Start()
         {
             staticObject = this;
+            
 
             if (TimeTicks.Length != 4) throw new System.Exception("There must be 4 timeticks!");
             handTransf = ClockHand.GetComponent<RectTransform>();
@@ -47,9 +50,11 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            //Decrease Time
             if (!isFrozen && time > 0f) time -= Time.deltaTime;
-            else if(time < 0f) time = 0f;
+            else if (time < 0f) time = 0f;
 
+            //Display Time
             string roundedTime = (Mathf.Round(time * 100f) / 100f).ToString();
             int decimalPoint = System.Math.Max(roundedTime.IndexOf('.'), roundedTime.IndexOf(','));
             if (decimalPoint == -1) roundedTime += ".00";
@@ -78,6 +83,16 @@ namespace Assets.Scripts
             for (int i = 0; i < types.Length; i++)
             {
                 staticObject.abilityObjs[i].GetComponent<Image>().sprite = spriteDictionary[types[i]];
+            }
+        }
+
+        public static void CallibrateCD(float[] CDPercentage)
+        {
+            for(int i = 0; i < 4; i++)
+            {
+                staticObject.CDSquares[i].GetComponent<RectTransform>().sizeDelta = 
+                    new Vector2(staticObject.CDSquareHeight,
+                    CDPercentage[i] > 0f ? staticObject.CDSquareHeight * CDPercentage[i] : 0f);
             }
         }
     }
