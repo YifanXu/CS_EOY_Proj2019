@@ -120,12 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &71507337 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4616450893431523631, guid: 7b868862d78aef446a065ae18758050f,
-    type: 3}
-  m_PrefabInstance: {fileID: 410774664}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &288710993 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6991309803043196624, guid: cfd6f1afd25d943478b84c35cd6908f3,
@@ -198,6 +192,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597700785268880784, guid: 7b868862d78aef446a065ae18758050f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8597700785268880784, guid: 7b868862d78aef446a065ae18758050f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.88
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b868862d78aef446a065ae18758050f, type: 3}
@@ -293,7 +297,7 @@ RectTransform:
   m_Children:
   - {fileID: 1696062577}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -345,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae86ff5e902d10d4da0a72b9226032b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focus: {fileID: 71507337}
+  focus: {fileID: 0}
   background: {fileID: 1403351935}
   LerpFactor: 0.7
   backgroundFactor: 0.05
@@ -405,7 +409,7 @@ Transform:
   m_Children:
   - {fileID: 1403351936}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &640090865 stripped
 GameObject:
@@ -507,7 +511,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1193456654 stripped
 GameObject:
@@ -896,7 +900,7 @@ Transform:
   m_Children:
   - {fileID: 2025530149}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2025530148
 GameObject:

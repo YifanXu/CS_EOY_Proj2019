@@ -24,6 +24,10 @@ namespace Assets.Scripts
             {specificType.Freeze, typeof(FreezeAbility) }
         };
 
+        public KeyCode key;
+        public float CDTimer;
+        public float totalCD;
+
         // Start is called before the first frame update
         void Start()
         {
