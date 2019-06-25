@@ -15,7 +15,6 @@ namespace Assets.Scripts
         public bool isFrozen = false;
         public LayerMask groundLayer;
 
-
         private KeyCode moveL;
         private KeyCode moveR;
         private KeyCode jumpButton;

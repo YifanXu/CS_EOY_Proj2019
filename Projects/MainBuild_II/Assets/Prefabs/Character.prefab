@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6725199794876045966}
   - component: {fileID: 5670202223673972778}
   - component: {fileID: 4616450893431523638}
+  - component: {fileID: -2313055710681073963}
+  - component: {fileID: 4009120473943697427}
   m_Layer: 10
   m_Name: Character
   m_TagString: Player
@@ -57,7 +59,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  isGrounded: 0
+  isGrounded: 1
   hitWallRight: 0
   hitWallLeft: 0
   momentum: 0
@@ -273,3 +275,48 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!95 &-2313055710681073963
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616450893431523631}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f335990d64ae6647b459f9077c44bb3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4009120473943697427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616450893431523631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58f0692b0021524f920071d369a3a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 10
+  verticalSize: 0.7
+  horizontalSize: 1
+  canDI: 1
+  isFrozen: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  spd: 10
+  anim: {fileID: -2313055710681073963}
+  isGrounded: 0
+  hitWallRight: 0
+  hitWallLeft: 0
+  momentum: 0
