@@ -25,6 +25,7 @@ namespace Assets.Scripts
         public bool isGrounded = false;
         public bool hitWallRight = false;
         public bool hitWallLeft = false;
+        public float blastZoneY = -10f;
         public float momentum = 0f;
         private float momentumDelta = 0f;
 
@@ -47,6 +48,10 @@ namespace Assets.Scripts
         void Update()
         {
             if (UIScript.Ended) isFrozen = true;
+            if(transf.position.y < blastZoneY)
+            {
+                UIScript.staticObject.FailLevel("Fell out of the world");
+            }
             var bounds = this.GetComponent<Collider2D>().bounds;
             var center = bounds.center;
             var size = bounds.size;
