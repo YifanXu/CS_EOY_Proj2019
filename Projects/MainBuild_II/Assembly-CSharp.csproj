@@ -79,12 +79,14 @@
     <Compile Include="Assets\Scripts\KeyBindButtonScript.cs" />
     <Compile Include="Assets\Scripts\KeyBindManager.cs" />
     <Compile Include="Assets\Scripts\LevelSelectScript.cs" />
+    <Compile Include="Assets\Scripts\LeverScript.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\Messenger.cs" />
     <Compile Include="Assets\Scripts\OctopusBehavior.cs" />
     <Compile Include="Assets\Scripts\Output.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilityScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\RailScript.cs" />
     <Compile Include="Assets\Scripts\RayCollider2D.cs" />
     <Compile Include="Assets\Scripts\RecallAbility.cs" />
     <Compile Include="Assets\Scripts\ShrimpBehavior.cs" />

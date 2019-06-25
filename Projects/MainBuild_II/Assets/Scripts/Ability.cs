@@ -48,7 +48,14 @@ namespace Assets.Scripts
 
         public static Ability AddAbility(specificType type, GameObject obj)
         {
-            return (Ability)obj.AddComponent(ablities[type]);
+            if (ablities.TryGetValue(type, out var result))
+            {
+                return (Ability)obj.AddComponent(result);
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

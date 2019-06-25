@@ -33,6 +33,8 @@ namespace Assets.Scripts
         public bool isFrozen = false;
         private float time;
         private PlayerAbilityScript playerAbility;
+
+        public static bool Ended { get => staticObject.failurePanel.activeInHierarchy || staticObject.endPanel.activeInHierarchy; }
         // Start is called before the first frame update
         void Start()
         {
@@ -55,6 +57,7 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Escape)) FailLevel("Esc was pressed");
             //Decrease Time
             if (!isFrozen && time > 0f) time -= Time.deltaTime;
             else if (time < 0f)
