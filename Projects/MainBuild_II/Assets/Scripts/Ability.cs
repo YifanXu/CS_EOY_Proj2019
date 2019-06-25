@@ -12,6 +12,9 @@ namespace Assets.Scripts
             None,
             Dash,
             Freeze,
+            Explicate,
+            Recall,
+            BanHammer
         }
 
         public float timer { get; set; }
@@ -21,7 +24,8 @@ namespace Assets.Scripts
         private static Dictionary<specificType, Type> ablities = new Dictionary<specificType, Type>()
         {
             {specificType.Dash, typeof(DashAbility) },
-            {specificType.Freeze, typeof(FreezeAbility) }
+            {specificType.Freeze, typeof(FreezeAbility) },
+            {specificType.Recall, typeof(RecallAbility) }
         };
 
         public KeyCode key;

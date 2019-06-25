@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ability.cs" />
+    <Compile Include="Assets\Scripts\AbilitySelectScript.cs" />
     <Compile Include="Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CoinScript.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\Output.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilityScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\RecallAbility.cs" />
     <Compile Include="Assets\Scripts\ShrimpBehavior.cs" />
     <Compile Include="Assets\Scripts\ShrimpInstantiate.cs" />
     <Compile Include="Assets\Scripts\TomatoBehavior.cs" />

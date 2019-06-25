@@ -9,6 +9,7 @@ namespace Assets.Scripts
     {
         public Ability.specificType[] type;
         public Ability[] abilities;
+        public GameObject shadowPrefab;
         private bool iconsCallibrated = false;
 
         // Start is called before the first frame update
@@ -35,6 +36,7 @@ namespace Assets.Scripts
         void Update()
         {
             float[] CDPercentages = new float[4];
+            float[] actualTime = new float[4];
             if(!iconsCallibrated && UIScript.staticObject != null) UIScript.CallibrateIcons(type);
             for (int i = 0; i < abilities.Length; i++)
             {
@@ -43,6 +45,7 @@ namespace Assets.Scripts
                     CDPercentages[i] = -1;
                     continue;
                 }
+                actualTime[i] = abilities[i].CDTimer;
                 CDPercentages[i] = abilities[i].CDTimer / abilities[i].totalCD;
                 if (abilities[i].CDTimer < 0f && Input.GetKeyDown(abilities[i].key))
                 {
@@ -56,7 +59,7 @@ namespace Assets.Scripts
                 
             }
 
-            UIScript.CallibrateCD(CDPercentages);
+            UIScript.staticObject.CallibrateCD(CDPercentages, actualTime);
         }
     }
 }

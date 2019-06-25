@@ -20,6 +20,7 @@ namespace Assets.Scripts
 
         public GameObject[] abilityObjs;
         public GameObject[] CDSquares;
+        public GameObject[] CDText;
         public Sprite[] abilitySprites;
 
         private RectTransform handTransf;
@@ -79,6 +80,7 @@ namespace Assets.Scripts
                 {Ability.specificType.Freeze, staticObject.abilitySprites[0] },
                 {Ability.specificType.Dash, staticObject.abilitySprites[1] },
                 {Ability.specificType.None, staticObject.abilitySprites[4] },
+                {Ability.specificType.Recall, staticObject.abilitySprites[3] }
             };
             for (int i = 0; i < types.Length; i++)
             {
@@ -86,13 +88,25 @@ namespace Assets.Scripts
             }
         }
 
-        public static void CallibrateCD(float[] CDPercentage)
+        public void CallibrateCD(float[] CDPercentage, float[] timeDisplays)
         {
             for(int i = 0; i < 4; i++)
             {
-                staticObject.CDSquares[i].GetComponent<RectTransform>().sizeDelta = 
-                    new Vector2(staticObject.CDSquareHeight,
-                    CDPercentage[i] > 0f ? staticObject.CDSquareHeight * CDPercentage[i] : 0f);
+                CDSquares[i].GetComponent<RectTransform>().sizeDelta = 
+                    new Vector2(CDSquareHeight,
+                    CDPercentage[i] > 0f ? CDSquareHeight * CDPercentage[i] : 0f);
+
+                string display = string.Empty;
+                if (timeDisplays[i] > 10f)
+                {
+                    display = Mathf.Round(timeDisplays[i]).ToString();
+                }
+                else if (timeDisplays[i] > 0f)
+                {
+                    display = (Mathf.Round(timeDisplays[i] * 10f) / 10f).ToString();
+                    if (display.IndexOf('.') == -1) display += ".0";
+                }
+                CDText[i].GetComponent<Text>().text = display;
             }
         }
     }
