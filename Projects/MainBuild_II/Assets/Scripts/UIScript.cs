@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using TMPro;
 
 namespace Assets.Scripts
 {
@@ -17,11 +18,14 @@ namespace Assets.Scripts
         public GameObject ClockHand;
         public GameObject TimeText;
         public GameObject[] TimeTicks;
-
         public GameObject[] abilityObjs;
         public GameObject[] CDSquares;
         public GameObject[] CDText;
         public Sprite[] abilitySprites;
+        public GameObject failurePanel;
+        public GameObject endPanel;
+        public TextMeshProUGUI failMessage;
+        public TextMeshProUGUI endTimeText;
 
         private RectTransform handTransf;
         private Text timeTextComp;
@@ -53,7 +57,10 @@ namespace Assets.Scripts
         {
             //Decrease Time
             if (!isFrozen && time > 0f) time -= Time.deltaTime;
-            else if (time < 0f) time = 0f;
+            else if (time < 0f)
+            {
+                FailLevel("Time Ran Out.");
+            }
 
             //Display Time
             string roundedTime = (Mathf.Round(time * 100f) / 100f).ToString();
@@ -108,6 +115,34 @@ namespace Assets.Scripts
                 }
                 CDText[i].GetComponent<Text>().text = display;
             }
+        }
+
+        public void QuitLevel()
+        {
+            SceneManager.LoadScene(1);
+        }
+
+        public void RestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void FailLevel(string failText)
+        {
+            isFrozen = true;
+            time = 0f;
+            failurePanel.SetActive(true);
+            Messenger.levelFailed = true;
+            failMessage.text = failText;
+        }
+
+        public void FinishLevel()
+        {
+            isFrozen = true;
+            endPanel.SetActive(true);
+            Messenger.levelFailed = true;
+            endTimeText.text = $"Time Left: {Mathf.Floor(time)}s";
+            PlayerPrefs.SetInt("level", Messenger.levelID + 1);
         }
     }
 }

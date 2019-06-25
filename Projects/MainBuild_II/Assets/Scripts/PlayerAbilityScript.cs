@@ -15,6 +15,7 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
+            type = Messenger.abilties;
             abilities = new Ability[4];
             
             for (int i = 0; i < type.Length; i++)

@@ -10,7 +10,7 @@ public class AbilitySelectScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = "";
+        text.text = string.Empty;
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class AbilitySelectScript : MonoBehaviour
         
     }
 
-    public void ChangeSelection()
+    public void ClearText()
     {
         text.text = "";
     }

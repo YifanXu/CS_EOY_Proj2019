@@ -3,22 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuScript : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+namespace Assets.Scripts {
+    public class MainMenuScript : MonoBehaviour
     {
-        
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        }
 
-    public void StartButton()
-    {
-        SceneManager.LoadScene(1);
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void StartButton()
+        {
+            SceneManager.LoadScene(1);
+        }
+
+        public void ResetButton()
+        {
+            PlayerPrefs.SetInt("level", 1);
+        }
+
+        public void KeyBindButton()
+        {
+            Messenger.SceneBeforeOptions = 0;
+            SceneManager.LoadScene(2);
+        }
+
+        public void QuitButton()
+        {
+            Debug.Log("QUIT!");
+            Application.Quit();
+        }
     }
 }

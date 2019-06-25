@@ -6,7 +6,7 @@ namespace Assets.Scripts
 {
     public class DashAbility : Ability
     {
-        public float strength = 10f;
+        public float strength = 20f;
         private TrailRenderer trail;
         private PlayerScript movement;
         private SpriteRenderer spriteRen;
