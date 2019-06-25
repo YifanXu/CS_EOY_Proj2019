@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 namespace Assets.Scripts {
     public class MainMenuScript : MonoBehaviour
     {
+        public GameObject creditPanel;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -34,6 +36,11 @@ namespace Assets.Scripts {
             SceneManager.LoadScene(2);
         }
 
+        public void CreditsToggle()
+        {
+            creditPanel.SetActive(!creditPanel.activeSelf);
+        }
+        
         public void QuitButton()
         {
             Debug.Log("QUIT!");

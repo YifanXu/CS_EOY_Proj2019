@@ -153,7 +153,7 @@ RectTransform:
   m_Children:
   - {fileID: 1585439331}
   m_Father: {fileID: 235754245}
-  m_RootOrder: 13
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d2fe5f4f8caf498a9794565305e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  function: 2
+  function: 6
   text: {fileID: 1585439332}
 --- !u!114 &61343011
 MonoBehaviour:
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1197760782}
         m_MethodName: ChangeKey
         m_Mode: 2
         m_Arguments:
@@ -454,7 +454,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 235754245}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -685,7 +685,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 235754245}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1475,15 +1475,15 @@ RectTransform:
   - {fileID: 1147333328}
   - {fileID: 987044460}
   - {fileID: 2129043598}
-  - {fileID: 881723572}
-  - {fileID: 77157438}
-  - {fileID: 1381185489}
   - {fileID: 863354835}
   - {fileID: 507608981}
   - {fileID: 477925379}
+  - {fileID: 61343009}
+  - {fileID: 881723572}
+  - {fileID: 77157438}
+  - {fileID: 1381185489}
   - {fileID: 110926212}
   - {fileID: 1145229460}
-  - {fileID: 61343009}
   - {fileID: 607074342}
   m_Father: {fileID: 1960544214}
   m_RootOrder: 0
@@ -1720,7 +1720,7 @@ RectTransform:
   m_Children:
   - {fileID: 1267588185}
   m_Father: {fileID: 235754245}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1739,7 +1739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d2fe5f4f8caf498a9794565305e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  function: 2
+  function: 5
   text: {fileID: 1267588186}
 --- !u!114 &477925381
 MonoBehaviour:
@@ -1754,7 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1784,7 +1784,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1197760782}
         m_MethodName: ChangeKey
         m_Mode: 2
         m_Arguments:
@@ -1867,7 +1867,7 @@ RectTransform:
   m_Children:
   - {fileID: 1785805920}
   m_Father: {fileID: 235754245}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1886,7 +1886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d2fe5f4f8caf498a9794565305e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  function: 1
+  function: 4
   text: {fileID: 1785805921}
 --- !u!114 &507608983
 MonoBehaviour:
@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1931,7 +1931,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1197760782}
         m_MethodName: ChangeKey
         m_Mode: 2
         m_Arguments:
@@ -3471,7 +3471,7 @@ RectTransform:
   m_Children:
   - {fileID: 1747456119}
   m_Father: {fileID: 235754245}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -3490,7 +3490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d2fe5f4f8caf498a9794565305e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  function: 0
+  function: 3
   text: {fileID: 1747456120}
 --- !u!114 &863354837
 MonoBehaviour:
@@ -3505,7 +3505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3535,7 +3535,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1197760782}
         m_MethodName: ChangeKey
         m_Mode: 2
         m_Arguments:
@@ -3615,7 +3615,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 235754245}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -4123,7 +4123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4153,7 +4153,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1197760782}
         m_MethodName: ChangeKey
         m_Mode: 2
         m_Arguments:
@@ -4380,7 +4380,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 235754245}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -4574,7 +4574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4604,7 +4604,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1197760782}
         m_MethodName: ChangeKey
         m_Mode: 2
         m_Arguments:
@@ -4987,7 +4987,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857e689dacfdd5a40b1e6da9259dc417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyPressedColor: {r: 0.81212753, g: 0.3445621, b: 0.8207547, a: 0}
+  currentKey: {fileID: 0}
+  KeyPressedColor: {r: 0.81212753, g: 0.3445621, b: 0.8207547, a: 1}
 --- !u!224 &1197760783
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5653,7 +5654,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 235754245}
-  m_RootOrder: 7
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -6664,7 +6665,7 @@ GameObject:
   - component: {fileID: 1745603859}
   - component: {fileID: 1745603858}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6703,7 +6704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -7725,7 +7726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -7755,7 +7756,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1197760782}
         m_MethodName: ChangeKey
         m_Mode: 2
         m_Arguments:
