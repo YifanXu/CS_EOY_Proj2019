@@ -39,8 +39,11 @@ namespace Assets.Scripts
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                Destroy(this.gameObject);
-                UIScript.ChangeTime(timeLoss);
+                if (!GetComponent<PlayerScript>().isFrozen)
+                {
+                    Destroy(this.gameObject);
+                    UIScript.ChangeTime(timeLoss);
+                }
             }
         }
     }
