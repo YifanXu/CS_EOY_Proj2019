@@ -9,13 +9,14 @@ namespace Assets.Scripts
 {
     public class KeyBindManager : MonoBehaviour
     {
-        GameObject currentKey;
+        public GameObject currentKey = null;
         public Color KeyPressedColor;
 
         // Start is called before the first frame update
         void Start()
         {
             KeyBinding.Populate();
+            currentKey = null;
         }
 
         // Update is called once per frame
@@ -41,10 +42,10 @@ namespace Assets.Scripts
             }
         }
 
-        public void ChangeKey (GameObject clicked )
+        public void ChangeKey (GameObject clicked)
         {
             Debug.Log($"changekey {clicked.name}");
-            if(clicked != null)
+            if(currentKey != null)
             {
                 currentKey.GetComponent<Image>().color = Color.white;
             }

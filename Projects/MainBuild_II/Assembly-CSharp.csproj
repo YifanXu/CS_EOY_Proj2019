@@ -64,10 +64,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ability.cs" />
     <Compile Include="Assets\Scripts\AbilitySelectScript.cs" />
+    <Compile Include="Assets\Scripts\BoxBehavior.cs" />
     <Compile Include="Assets\Scripts\ButtonScript.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\CoinScript.cs" />
     <Compile Include="Assets\Scripts\DashAbility.cs" />
+    <Compile Include="Assets\Scripts\Direction.cs" />
     <Compile Include="Assets\Scripts\DoorScript.cs" />
     <Compile Include="Assets\Scripts\ExitScript.cs" />
     <Compile Include="Assets\Scripts\ExplicateAbility.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\Scripts\Output.cs" />
     <Compile Include="Assets\Scripts\PlayerAbilityScript.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\RayCollider2D.cs" />
     <Compile Include="Assets\Scripts\RecallAbility.cs" />
     <Compile Include="Assets\Scripts\ShrimpBehavior.cs" />
     <Compile Include="Assets\Scripts\ShrimpInstantiate.cs" />
