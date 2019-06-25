@@ -48,7 +48,11 @@ namespace Assets.Scripts
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                this.GetComponent<SpriteRenderer>().sprite = explosion;
+                if (!GetComponent<PlayerScript>().isFrozen)
+                {
+                    this.GetComponent<SpriteRenderer>().sprite = explosion;
+                    UIScript.ChangeTime(timeLoss);
+                }
             }
         }
 

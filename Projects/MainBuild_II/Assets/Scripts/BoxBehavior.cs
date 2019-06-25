@@ -10,8 +10,10 @@ namespace Assets.Scripts
         public float rayDistance;
         private Direction direction = Direction.right;
         public Transform groundDetection;
-        // private RayCollider2D rayCollider;
-        private BoxCollider2D collider;
+        private RayCollider2D rayCollider;
+        private bool movingRight = false;
+        // private BoxCollider2D collider;
+        private float timeLoss = -5.0f;
 
         // Start is called before the first frame update
         void Start()
@@ -21,101 +23,32 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            //transform.Translate(Vector2.right * speed * Time.deltaTime);
-            //rayCollider = new RayCollider2D(groundDetection.position, rayDistance);
-            //if (!rayCollider.groundDown.collider && rayCollider.groundLeft.collider)
-            //{
-            //    transform.eulerAngles = new Vector3(0.0f, 0.0f, -270.0f);
-            //}
-            //else if
-            //    (
-            //        (!rayCollider.groundLeft.collider && rayCollider.groundUp.collider) ||
-            //        (!rayCollider.groundUp.collider && rayCollider.groundRight.collider) ||
-            //        (!rayCollider.groundRight.collider && rayCollider.groundDown.collider)
-            //    )
-            //{
-            //    transform.eulerAngles = new Vector3(0.0f, 0.0f, -90.0f);
-            //}
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            rayCollider = new RayCollider2D(groundDetection.position, rayDistance);
+            if (!rayCollider.groundDown.collider)
+            {
+                if (movingRight)
+                {
+                    transform.eulerAngles = new Vector3(0.0f, -180.0f, 0.0f);
+                    movingRight = false;
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+                    movingRight = true;
+                }
+            }
+        }
 
-            collider = this.GetComponent<BoxCollider2D>();
-            if ( // Bottom is touching
-                    Physics2D.OverlapArea
-                    (
-                        new Vector2
-                        (
-                            collider.bounds.center.x - (collider.size.x / 2),
-                            collider.bounds.center.y - (collider.size.y / 2)
-                        ),
-                        new Vector2
-                        (
-                            collider.bounds.center.x + (collider.size.x / 2),
-                            collider.bounds.center.y - (collider.size.y / 2)
-                        )
-                    )
-               )
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
             {
-                transform.eulerAngles = new Vector3(0.0f, 0.0f, -270.0f);
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
-            else if
-                ( // Top is touching
-                    Physics2D.OverlapArea
-                    (
-                        new Vector2
-                        (
-                            collider.bounds.center.x - (collider.size.x / 2),
-                            collider.bounds.center.y + (collider.size.y / 2)
-                        ),
-                        new Vector2
-                        (
-                            collider.bounds.center.x + (collider.size.x / 2),
-                            collider.bounds.center.y + (collider.size.y / 2)
-                        )
-                    )
-               )
-            {
-                transform.eulerAngles = new Vector3(0.0f, 0.0f, -270.0f);
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
-            else if
-                ( // Left is touching
-                    Physics2D.OverlapArea
-                    (
-                        new Vector2
-                        (
-                            collider.bounds.center.x - (collider.size.x / 2),
-                            collider.bounds.center.y + (collider.size.y / 2)
-                        ),
-                        new Vector2
-                        (
-                            collider.bounds.center.x - (collider.size.x / 2),
-                            collider.bounds.center.y - (collider.size.y / 2)
-                        )
-                    )
-               )
-            {
-                transform.eulerAngles = new Vector3(0.0f, 0.0f, -270.0f);
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
-            else if
-                ( // Right is touching
-                    Physics2D.OverlapArea
-                    (
-                        new Vector2
-                        (
-                            collider.bounds.center.x + (collider.size.x / 2),
-                            collider.bounds.center.y + (collider.size.y / 2)
-                        ),
-                        new Vector2
-                        (
-                            collider.bounds.center.x + (collider.size.x / 2),
-                            collider.bounds.center.y - (collider.size.y / 2)
-                        )
-                    )
-               )
-            {
-                transform.eulerAngles = new Vector3(0.0f, 0.0f, -270.0f);
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
+                if (!GetComponent<PlayerScript>().isFrozen)
+                {
+                    Destroy(this.gameObject);
+                    UIScript.ChangeTime(timeLoss);
+                }
             }
         }
     }
