@@ -6,7 +6,7 @@ namespace Assets.Scripts
 {
     public class DashAbility : Ability
     {
-        public float strength = 10f;
+        public float strength = 20f;
         private TrailRenderer trail;
         private PlayerScript movement;
         private SpriteRenderer spriteRen;
@@ -19,6 +19,7 @@ namespace Assets.Scripts
         // Start is called before the first frame update
         void Start()
         {
+            totalCD = 2f;
             trail = GetComponent<TrailRenderer>();
             trail.enabled = false;
             movement = GetComponent<PlayerScript>();

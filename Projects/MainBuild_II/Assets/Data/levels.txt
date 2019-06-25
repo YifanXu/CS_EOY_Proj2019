@@ -1,0 +1,17 @@
+{
+  "test": 2,
+  "content": [
+    {
+      "title": "Introduction",
+      "description": "Just a quick intro",
+      "timeLimit": 10,
+      "abilityLimit": 0
+    },
+    {
+      "title": "Abilities",
+      "description": "FREEEZE",
+      "timeLimit": 15,
+      "abilityLimit": 1
+    }
+  ]
+}

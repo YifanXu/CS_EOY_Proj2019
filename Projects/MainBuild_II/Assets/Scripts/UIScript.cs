@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using TMPro;
 
 namespace Assets.Scripts
 {
@@ -13,23 +14,30 @@ namespace Assets.Scripts
         private static Dictionary<Ability.specificType, Sprite> spriteDictionary;
 
         public float MaxTime;
+        public float CDSquareHeight = 53f;
         public GameObject ClockHand;
         public GameObject TimeText;
         public GameObject[] TimeTicks;
-
         public GameObject[] abilityObjs;
+        public GameObject[] CDSquares;
+        public GameObject[] CDText;
         public Sprite[] abilitySprites;
+        public GameObject failurePanel;
+        public GameObject endPanel;
+        public TextMeshProUGUI failMessage;
+        public TextMeshProUGUI endTimeText;
 
         private RectTransform handTransf;
         private Text timeTextComp;
 
         public bool isFrozen = false;
         private float time;
-
+        private PlayerAbilityScript playerAbility;
         // Start is called before the first frame update
         void Start()
         {
             staticObject = this;
+            
 
             if (TimeTicks.Length != 4) throw new System.Exception("There must be 4 timeticks!");
             handTransf = ClockHand.GetComponent<RectTransform>();
@@ -47,9 +55,14 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            //Decrease Time
             if (!isFrozen && time > 0f) time -= Time.deltaTime;
-            else if(time < 0f) time = 0f;
+            else if (time < 0f)
+            {
+                FailLevel("Time Ran Out.");
+            }
 
+            //Display Time
             string roundedTime = (Mathf.Round(time * 100f) / 100f).ToString();
             int decimalPoint = System.Math.Max(roundedTime.IndexOf('.'), roundedTime.IndexOf(','));
             if (decimalPoint == -1) roundedTime += ".00";
@@ -74,11 +87,62 @@ namespace Assets.Scripts
                 {Ability.specificType.Freeze, staticObject.abilitySprites[0] },
                 {Ability.specificType.Dash, staticObject.abilitySprites[1] },
                 {Ability.specificType.None, staticObject.abilitySprites[4] },
+                {Ability.specificType.Recall, staticObject.abilitySprites[3] }
             };
             for (int i = 0; i < types.Length; i++)
             {
                 staticObject.abilityObjs[i].GetComponent<Image>().sprite = spriteDictionary[types[i]];
             }
+        }
+
+        public void CallibrateCD(float[] CDPercentage, float[] timeDisplays)
+        {
+            for(int i = 0; i < 4; i++)
+            {
+                CDSquares[i].GetComponent<RectTransform>().sizeDelta = 
+                    new Vector2(CDSquareHeight,
+                    CDPercentage[i] > 0f ? CDSquareHeight * CDPercentage[i] : 0f);
+
+                string display = string.Empty;
+                if (timeDisplays[i] > 10f)
+                {
+                    display = Mathf.Round(timeDisplays[i]).ToString();
+                }
+                else if (timeDisplays[i] > 0f)
+                {
+                    display = (Mathf.Round(timeDisplays[i] * 10f) / 10f).ToString();
+                    if (display.IndexOf('.') == -1) display += ".0";
+                }
+                CDText[i].GetComponent<Text>().text = display;
+            }
+        }
+
+        public void QuitLevel()
+        {
+            SceneManager.LoadScene(1);
+        }
+
+        public void RestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void FailLevel(string failText)
+        {
+            isFrozen = true;
+            time = 0f;
+            failurePanel.SetActive(true);
+            Messenger.levelFailed = true;
+            failMessage.text = failText;
+        }
+
+        public void FinishLevel()
+        {
+            isFrozen = true;
+            endPanel.SetActive(true);
+            Messenger.levelFailed = true;
+            endTimeText.text = $"Time Left: {Mathf.Floor(time)}s";
+            PlayerPrefs.SetInt("level", Messenger.levelID + 1);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Assets.Scripts
 {
     public class PlayerScript : MonoBehaviour
     {
-        public float spd = 10f;
+        public float spd = 10f; 
         public float jumpForce = 10f;
         public float verticalSize = 0.7f;
         public float horizontalSize = 1f;
@@ -46,6 +46,7 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
+            if (UIScript.staticObject.failurePanel.activeSelf || UIScript.staticObject.endPanel.activeSelf) isFrozen = true;
             var bounds = this.GetComponent<Collider2D>().bounds;
             var center = bounds.center;
             var size = bounds.size;
