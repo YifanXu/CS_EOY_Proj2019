@@ -269,3 +269,7 @@ E:\CodeStuff\CS_EOY_Proj2019\Projects\MainBuild_II\Temp\bin\Debug\nunit.framewor
 E:\CodeStuff\CS_EOY_Proj2019\Projects\MainBuild_II\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 E:\CodeStuff\CS_EOY_Proj2019\Projects\MainBuild_II\obj\Debug\Assembly-CSharp.dll
 E:\CodeStuff\CS_EOY_Proj2019\Projects\MainBuild_II\obj\Debug\Assembly-CSharp.pdb
+C:\Users\ishan\Desktop\CS_EOY_Proj2019\Projects\MainBuild_II\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\ishan\Desktop\CS_EOY_Proj2019\Projects\MainBuild_II\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\ishan\Desktop\CS_EOY_Proj2019\Projects\MainBuild_II\obj\Debug\Assembly-CSharp.dll
+C:\Users\ishan\Desktop\CS_EOY_Proj2019\Projects\MainBuild_II\obj\Debug\Assembly-CSharp.pdb
