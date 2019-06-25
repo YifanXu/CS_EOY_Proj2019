@@ -46,7 +46,7 @@ namespace Assets.Scripts
         // Update is called once per frame
         void Update()
         {
-            if (UIScript.staticObject.failurePanel.activeSelf || UIScript.staticObject.endPanel.activeSelf) isFrozen = true;
+            if (UIScript.Ended) isFrozen = true;
             var bounds = this.GetComponent<Collider2D>().bounds;
             var center = bounds.center;
             var size = bounds.size;

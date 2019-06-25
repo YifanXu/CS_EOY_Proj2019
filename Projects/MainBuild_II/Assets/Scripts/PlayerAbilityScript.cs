@@ -22,8 +22,12 @@ namespace Assets.Scripts
             {
                 if (type[i] != Ability.specificType.None)
                 {
-                    abilities[i] = Ability.AddAbility(type[i], gameObject);
-                    abilities[i].CDTimer = -1f;
+                    var newAbility = Ability.AddAbility(type[i], gameObject);
+                    if (newAbility != null)
+                    {
+                        abilities[i] = newAbility;
+                        abilities[i].CDTimer = -1f;
+                    }
                 }
             }
 
@@ -48,7 +52,7 @@ namespace Assets.Scripts
                 }
                 actualTime[i] = abilities[i].CDTimer;
                 CDPercentages[i] = abilities[i].CDTimer / abilities[i].totalCD;
-                if (abilities[i].CDTimer < 0f && Input.GetKeyDown(abilities[i].key))
+                if (abilities[i].CDTimer < 0f && Input.GetKeyDown(abilities[i].key) && !UIScript.Ended)
                 {
                     abilities[i].Activate();
                     abilities[i].CDTimer = abilities[i].totalCD;
